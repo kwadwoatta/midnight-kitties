@@ -31,7 +31,7 @@
     "@mui/material": "^7.1.1",
     "@mui/x-date-pickers": "^7.22.2",
     "@repo/kitties-api": "*",
-    "cryptokitty-generator": "git+https://riusricardo@github.com/riusricardo/kitties-generator#dev",
+    "cryptokitty-generator": "git+https://riusricardo@github.com/riusricardo/kitties-generator.git#dev",
     "dayjs": "^1.11.13",
     "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts",
     "react": "^18.2.0",
