@@ -7,6 +7,6 @@
   },
   "version": "0.0.0",
   "dependencies": {
-    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts"
+    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts.git"
   }
 }

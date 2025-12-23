@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@midnight-ntwrk/kitties-contract": "*",
-    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts",
+    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts.git",
     "vite-plugin-node-polyfills": "^0.23.0"
   },
   "devDependencies": {

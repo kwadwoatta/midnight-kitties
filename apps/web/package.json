@@ -9,7 +9,7 @@
     "@types/node": "^24.0.3",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
-    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts",
+    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts.git",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

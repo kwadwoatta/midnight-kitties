@@ -14,19 +14,44 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Key Features](#key-features)
-- [Technical Architecture](#technical-architecture)
-- [Project Structure & Components](#project-structure--components)
-- [Getting Started](#-getting-started)
-- [Compact Language & Smart Contract](#compact-language--smart-contract)
-- [NFT Module Integration](#nft-module-integration)
-- [Development & Testing](#-development--testing)
-- [Why This Project Matters](#why-this-project-matters)
-- [Documentation](#documentation)
-- [Documentation & Resources](#documentation--resources)
-- [Contributing](#contributing)
-- [License](#-license)
+- [🐱 Midnight Kitties](#-midnight-kitties)
+  - [Table of Contents](#table-of-contents)
+    - [Documentation \& Guides](#documentation--guides)
+  - [Project Overview](#project-overview)
+    - [Key Features](#key-features)
+  - [Technical Architecture](#technical-architecture)
+  - [Project Structure \& Components](#project-structure--components)
+    - [Core Applications](#core-applications)
+    - [Smart Contracts](#smart-contracts)
+    - [API Layer](#api-layer)
+    - [Development Tools](#development-tools)
+    - [Supporting Infrastructure](#supporting-infrastructure)
+  - [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Quick Installation](#quick-installation)
+    - [🌐 Web Application](#-web-application)
+    - [💻 CLI Operations](#-cli-operations)
+  - [Compact Language \& Smart Contract](#compact-language--smart-contract)
+  - [NFT Module Integration](#nft-module-integration)
+    - [Smart Contract Architecture](#smart-contract-architecture)
+    - [What This Approach Provides](#what-this-approach-provides)
+    - [Integration Benefits](#integration-benefits)
+    - [Available Operations](#available-operations)
+    - [Breeding System](#breeding-system)
+  - [🧪 Development \& Testing](#-development--testing)
+    - [Building the Project](#building-the-project)
+    - [Testing Suite](#testing-suite)
+    - [Code Quality](#code-quality)
+  - [Why This Project Matters](#why-this-project-matters)
+    - [Learning Compact Language](#learning-compact-language)
+    - [Ecosystem Development](#ecosystem-development)
+  - [Documentation](#documentation)
+  - [Documentation \& Resources](#documentation--resources)
+  - [Contributing](#contributing)
+    - [How to Contribute](#how-to-contribute)
+    - [Development Process](#development-process)
+  - [📄 License](#-license)
+    - [What this means](#what-this-means)
 
 ### Documentation & Guides
 
@@ -87,6 +112,7 @@ This project shows how different components work together in the Midnight ecosys
 ## Project Structure & Components
 
 ### Core Applications
+
 - **`apps/web/`** - React web application featuring:
   - Interactive kitty gallery and breeding interface
   - Midnight Lace wallet integration
@@ -94,6 +120,7 @@ This project shows how different components work together in the Midnight ecosys
   - Responsive Material-UI design
 
 ### Smart Contracts
+
 - **`packages/contracts/kitties/`** - Compact language implementation:
   - CryptoKitties-inspired breeding mechanics
   - Genetic algorithm for DNA inheritance
@@ -101,6 +128,7 @@ This project shows how different components work together in the Midnight ecosys
   - Integration with external NFT standard modules
 
 ### API Layer  
+
 - **`packages/api/kitties/`** - Unified API abstraction:
   - Cross-platform compatibility (Browser/Node.js)
   - Provider pattern for blockchain interactions
@@ -108,6 +136,7 @@ This project shows how different components work together in the Midnight ecosys
   - Transaction management utilities
 
 ### Development Tools
+
 - **`packages/cli/kitties/`** - Comprehensive CLI toolkit:
   - Contract deployment and management
   - Interactive breeding and trading operations
@@ -115,6 +144,7 @@ This project shows how different components work together in the Midnight ecosys
   - Testing and debugging tools
 
 ### Supporting Infrastructure
+
 - **`packages/ui/`** - Reusable React component library
 - **`packages/compact/`** - Smart contract compilation tools
 - **`packages/eslint-config/`** & **`packages/typescript-config/`** - Shared development configurations
@@ -122,11 +152,13 @@ This project shows how different components work together in the Midnight ecosys
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Node.js** v18 or higher
-- **Yarn** package manager
+
+- **Node.js** v20 (LTS) or higher (Verified with v22.21.1)
+- **Yarn** v4.12.0 (Project includes checked-in binary, but v4.12.0 is enforced)
 - **Midnight Lace Wallet** (for web interface)
 
 ### Quick Installation
+
 ```bash
 # Clone and install dependencies
 git clone https://github.com/riusricardo/midnight-kitties.git
@@ -138,6 +170,7 @@ yarn build
 ```
 
 ### 🌐 Web Application
+
 ```bash
 # Launch the React frontend
 yarn start
@@ -145,6 +178,7 @@ yarn start
 ```
 
 ### 💻 CLI Operations  
+
 ```bash
 # Interactive CLI with testnet (external proof server)
 yarn kitties-cli-remote
@@ -154,13 +188,14 @@ yarn kitties-cli-remote-ps
 ```
 
 **CLI Features:**
+
 - 🚀 Deploy new kitty contracts
 - 🐱 Create and manage kitties  
 - 🧬 Breed kitties with genetic inheritance
 - 💰 Marketplace operations (buy/sell/offer)
 - 📊 Contract statistics (# of Kitties in existence)
 - 🧐​ Query kitty details and ownership
-- 🖼️ Direct access to selected NFT module circuits 
+- 🖼️ Direct access to selected NFT module circuits
 
 ## Compact Language & Smart Contract
 
@@ -172,16 +207,19 @@ This project is a practical exploration of the **Compact programming language**.
 
 This project demonstrates how to work with external NFT modules from the [`midnight-contracts`](https://github.com/riusricardo/midnight-contracts) repository:
 
-### What This Approach Provides:
+### What This Approach Provides
+
 - **Time Saving** - No need to implement standard NFT functionality from scratch
 - **Reliability** - Uses tested NFT implementations as a foundation
 - **Modularity** - Clean separation between standard and custom functionality  
 - **Learning** - Shows how to build on existing Midnight infrastructure
 
-### Integration Benefits:
+### Integration Benefits
+
 The external NFT module handles all the standard ERC-721 operations (balanceOf, ownerOf, approve, etc.), while our contract focuses on the CryptoKitties-specific logic like breeding, marketplace, and genetic systems. This demonstrates a practical approach to smart contract development where you can focus on your unique features rather than reimplementing common patterns.
 
 **1. External NFT Module Import**
+
 ```compact
 import "midnight-contracts/contracts/tokens/nft/src/modules/Nft";
 
@@ -197,6 +235,7 @@ export {
 ```
 
 **2. CryptoKitties Data Structures**
+
 ```compact
 export struct Kitty {
   dna: Field,                // Unique genetic identifier (32 bytes)
@@ -215,6 +254,7 @@ export struct Offer {
 ```
 
 **3. Contract State Management**
+
 ```compact
 export ledger kitties: Map<Uint<64>, Kitty>;           // All kitty data
 export ledger allKittiesCount: Counter;                // Total kitties created
@@ -225,6 +265,7 @@ export ledger buyOffers: Map<Uint<64>, Map<ZswapCoinPublicKey, Offer>>; // Marke
 ### Available Operations
 
 **NFT Standard Operations From NFT Module** (from external module):
+
 - `balanceOf(owner)` - Get token count for an address
 - `ownerOf(tokenId)` - Get owner of a specific kitty
 - `approve(to, tokenId)` - Approve transfer of a kitty
@@ -233,6 +274,7 @@ export ledger buyOffers: Map<Uint<64>, Map<ZswapCoinPublicKey, Offer>>; // Marke
 - `isApprovedForAll(owner, operator)` - Check operator approval status
 
 **CryptoKitties-Specific Operations**:
+
 - `createKitty()` - Mint a new kitty with random DNA
 - `transferKitty(to, kittyId)` - Transfer kitty to another address
 - `setPrice(kittyId, price)` - Put kitty up for sale
@@ -246,6 +288,7 @@ export ledger buyOffers: Map<Uint<64>, Map<ZswapCoinPublicKey, Offer>>; // Marke
 ### Breeding System
 
 The contract includes a simple breeding mechanism:
+
 - Two kitties can be bred to create a new offspring
 - DNA is combined using a pseudo-random algorithm
 - Generation number increments from the highest parent generation
@@ -256,6 +299,7 @@ This demonstrates how Compact can handle complex logic while maintaining integra
 ## 🧪 Development & Testing
 
 ### Building the Project
+
 ```bash
 # Compile smart contracts
 yarn compact
@@ -272,6 +316,7 @@ yarn build:app
 ```
 
 ### Testing Suite
+
 ```bash
 # Run contract simulation tests
 yarn test-contract
@@ -284,6 +329,7 @@ yarn test-against-testnet
 ```
 
 ### Code Quality
+
 ```bash
 # Lint all packages
 yarn lint
@@ -297,12 +343,14 @@ yarn format
 **Midnight Kitties** serves as a practical example for the Midnight ecosystem:
 
 ### Learning Compact Language
+
 - **Hands-on Example** - Shows real-world Compact programming patterns
 - **Best Practices** - Demonstrates good patterns for data structures and state management
 - **External Modules** - Shows how to integrate and extend existing functionality
 - **Reference Implementation** - Provides a foundation for other developers to learn from
 
 ### Ecosystem Development  
+
 - **Module Integration** - Demonstrates how to use external contract modules effectively
 - **Development Patterns** - Establishes patterns for code reuse in Midnight projects
 - **Community Building** - Provides a foundation for other NFT projects on Midnight
@@ -327,14 +375,16 @@ yarn format
 
 This project welcomes contributions and questions from anyone interested in learning about Midnight development:
 
-### How to Contribute:
+### How to Contribute
+
 - **Ask Questions** - Open issues if anything is unclear
 - **Report Bugs** - Help improve the codebase
 - **Suggest Improvements** - Ideas for better examples or documentation
 - **Add Examples** - More test cases or usage examples
 - **Improve UI** - Make the interface more user-friendly
 
-### Development Process:
+### Development Process
+
 1. Fork the repository
 2. Create a feature branch
 3. Implement changes with tests
@@ -347,7 +397,7 @@ This project welcomes contributions and questions from anyone interested in lear
 
 This project is licensed under the **GNU General Public License v3.0** - see the [LICENSE](LICENSE) file for details.
 
-### What this means:
+### What this means
 
 - ✅ **Free to use** in open source projects
 - ✅ **Free to modify** and distribute
@@ -358,7 +408,7 @@ This project is licensed under the **GNU General Public License v3.0** - see the
 
 **Built with ❤️ for the Midnight ecosystem**
 
-_Empowering developers to build privacy-first applications with confidence._
+*Empowering developers to build privacy-first applications with confidence.*
 
 ---
 

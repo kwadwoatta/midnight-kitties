@@ -8,7 +8,7 @@
   "dependencies": {
     "@midnight-ntwrk/kitties-contract": "*",
     "@repo/kitties-api": "^0.0.1",
-    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts"
+    "midnight-contracts": "git+https://riusricardo@github.com/riusricardo/midnight-contracts.git"
   },
   "devDependencies": {
     "eslint": "^9.28.0",
